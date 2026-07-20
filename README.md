@@ -9,17 +9,17 @@ Data diproses secara *streaming* menggunakan **Google Cloud Dataflow (Apache Bea
 ## Arsitektur Sistem
 ```
 [ IoT Sensor Simulator ]
-│
-▼
+          │
+          ▼
 [ Google Cloud Pub/Sub ]  --> (Streaming Data Ingestion)
-│
-▼
+          │
+          ▼
 [ Google Cloud Dataflow ] --> (Data Transformation & Aggregation via Apache Beam)
-│
-▼
+          │
+          ▼
 [ Google BigQuery ]       --> (Gold Table Storage & DirectQuery)
-│
-▼
+        │
+        ▼
 [ Power BI Dashboard ]    --> (Real-Time Monitoring & Analytics)
 ```
 
@@ -39,9 +39,11 @@ Data diproses secara *streaming* menggunakan **Google Cloud Dataflow (Apache Bea
 ```text
 smart-city-aqi/
 ├── simulator/
-│   └── sensor_simulator.py    # Skrip simulator untuk mengirim data IoT buatan ke Pub/Sub
-├── pipeline/
-│   └── stream_pipeline.py     # Kode Apache Beam/Dataflow untuk transformasi data
+│   └── air_quality_simulator.py    # Skrip simulator untuk mengirim data IoT buatan ke Pub/Sub
+│   └── .env
+├── dataflow/
+│   └── aqi_dataflow_pipeline.py     # Kode Apache Beam/Dataflow untuk transformasi data
+│   └── .env
 ├── dashboard/
 │   └── dashboard.png          # Tangkapan layar Power BI Dashboard
 ├── requirements.txt           # Dependensi Python yang dibutuhkan
