@@ -1,5 +1,10 @@
 # Smart City IoT Air Quality Data Pipeline
-
+![Google Cloud Pub/Sub](https://img.shields.io/badge/Google_Cloud_Pub/Sub-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)
+![Google Cloud Dataflow](https://img.shields.io/badge/Google_Cloud_Dataflow-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)
+![Apache Beam](https://img.shields.io/badge/Apache_Beam-0288D1?style=for-the-badge&logo=apachebeam&logoColor=white)
+![Google BigQuery](https://img.shields.io/badge/Google_BigQuery-669DF6?style=for-the-badge&logo=googlebigquery&logoColor=white)
+![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 Proyek ini adalah *end-to-end data engineering pipeline* berkinerja tinggi untuk memproses dan menganalisis data kualitas udara (*Air Quality Index*) secara *real-time* dari berbagai sensor IoT kota pintar. 
 
 Data diproses secara *streaming* menggunakan **Google Cloud Dataflow (Apache Beam)**, disimpan di **Google BigQuery**, dan divisualisasikan melalui **Power BI Dashboard**.
