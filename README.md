@@ -5,9 +5,8 @@
 ![Google BigQuery](https://img.shields.io/badge/Google_BigQuery-669DF6?style=for-the-badge&logo=googlebigquery&logoColor=white)
 ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-Proyek ini adalah *end-to-end data engineering pipeline* berkinerja tinggi untuk memproses dan menganalisis data kualitas udara (*Air Quality Index*) secara *real-time* dari berbagai sensor IoT kota pintar. 
 
-Data diproses secara *streaming* menggunakan **Google Cloud Dataflow (Apache Beam)**, disimpan di **Google BigQuery**, dan divisualisasikan melalui **Power BI Dashboard**.
+Proyek ini adalah *end-to-end data engineering pipeline* berkinerja tinggi untuk memproses dan menganalisis data kualitas udara (*Air Quality Index*) secara *real-time* dari berbagai sensor IoT kota pintar. Data diproses secara *streaming* menggunakan **Google Cloud Dataflow (Apache Beam)**, disimpan di **Google BigQuery**, dan divisualisasikan melalui **Power BI Dashboard**.
 
 ---
 
