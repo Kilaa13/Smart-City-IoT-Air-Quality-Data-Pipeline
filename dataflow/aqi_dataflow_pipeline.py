@@ -42,7 +42,6 @@ def is_valid_aqi(record):
         co2 = record.get("co2_level")
         humidity = record.get("humidity")
 
-        # Validasi kualitas udara
         if not sensor_id or pm25 is None or co2 is None or humidity is None:
             return False
         if not (0 <= humidity <= 100) or pm25 < 0 or co2 < 0:
@@ -77,7 +76,6 @@ def aggregate_aqi_records(key_values):
 with beam.Pipeline(options=pipeline_options) as p:
 
     # =================== BRONZE LAYER ===================
-    # Membaca data streaming asli dari PubSub
     bronze_data = (
         p
         | "Read from PubSub" >> beam.io.ReadFromPubSub(subscription=PUBSUB_SUBSCRIPTION)
@@ -91,7 +89,6 @@ with beam.Pipeline(options=pipeline_options) as p:
     )
 
     # =================== SILVER LAYER ===================
-    # Proses pembersihan data dalam memori
     silver_data = (
         bronze_data
         | "Parse JSON" >> beam.Map(parse_json)
@@ -105,7 +102,6 @@ with beam.Pipeline(options=pipeline_options) as p:
     )
 
     # =================== GOLD LAYER ===================
-    # Proses perangkuman (Agregasi rata-rata per menit)
     gold_data = (
         silver_data
         | "Key by sensor_id" >> beam.Map(extract_for_aggregation)
