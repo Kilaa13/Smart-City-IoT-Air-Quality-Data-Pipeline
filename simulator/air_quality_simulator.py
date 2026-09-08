@@ -18,7 +18,7 @@ ERROR_RATE = float(os.getenv("ERROR_RATE", 0.1))
 publisher = pubsub_v1.PublisherClient()
 topic_path = publisher.topic_path(PROJECT_ID, TOPIC_ID)
 
-# Daftar ID Sensor unik
+# List of unique Sensor IDs
 sensor_ids = [f"SNS-{str(i).zfill(3)}" for i in range(1, SENSOR_COUNT + 1)]
 
 def generate_sensor_data():
@@ -26,11 +26,11 @@ def generate_sensor_data():
     sensor_id = random.choice(sensor_ids)
     timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
 
-    # Menghasilkan nilai sensor dalam batas wajar
-    pm25 = round(random.uniform(10.0, 150.0), 1)      # Partikel debu (ug/m3)
-    co2 = round(random.uniform(350.0, 1000.0), 1)     # Kadar Gas CO2 (ppm)
-    temperature = round(random.uniform(24.0, 36.0), 1) # Suhu Udara (Celsius)
-    humidity = round(random.uniform(40.0, 90.0), 1)    # Kelembapan (%)
+    # Generate sensor values within realistic thresholds
+    pm25 = round(random.uniform(10.0, 150.0), 1)      # Particulate matter (ug/m3)
+    co2 = round(random.uniform(350.0, 1000.0), 1)     # CO2 levels (ppm)
+    temperature = round(random.uniform(24.0, 36.0), 1) # Air temperature (Celsius)
+    humidity = round(random.uniform(40.0, 90.0), 1)    # Humidity (%)
 
     record = {
         "sensor_id": sensor_id,
@@ -41,7 +41,7 @@ def generate_sensor_data():
         "humidity": humidity
     }
 
-    # INJEKSI EROR (10% Chance) - Untuk Silver Layer
+    # Error Injection (10% probability) - For Silver Layer
     if random.random() < ERROR_RATE:
         error_type = random.choice(["missing_field", "negative_value", "out_of_range"])
         if error_type == "missing_field":
