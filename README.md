@@ -42,16 +42,15 @@ Data is ingested and processed via streaming using **Google Cloud Dataflow (Apac
 ## 📂 Repository Structure
 ```text
 smart-city-aqi/
-├── simulator/
-│   ├── air_quality_simulator.py  # Python script to generate and publish mock IoT data to Pub/Sub
-│   └── .env                      # Environment variables for the simulator
-├── dataflow/
-│   ├── aqi_dataflow_pipeline.py  # Apache Beam/Dataflow code for data transformation
-│   └── .env                      # Environment variables for the pipeline
 ├── dashboard/
 │   └── dashboard.png             # Screenshot of the Power BI Dashboard
-├── requirements.txt              # Required Python dependencies
-└── README.md                     # Main project documentation
+├── dataflow/
+│   └── aqi_dataflow_pipeline.py  # Apache Beam/Dataflow code for data transformation
+├── simulator/
+│   └── air_quality_simulator.py  # Python script to generate and publish mock IoT data to Pub/Sub
+├── .env.example
+├── README.md                     # Main project documentation 
+└── requirements.txt              # Required Python dependencies
 ```
 ## 🚀 Getting Started
 ### 1. Prerequisites
